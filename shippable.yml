@@ -1,6 +1,7 @@
-language: node_js
+node_jslanguage: node_js
 node_js:
   - "0.10"
+  - "0.11"
 before_script: mkdir -p shippable/codecoverage
 after_script: 
   - ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -u tdd 
@@ -8,3 +9,7 @@ after_script:
 notifications:
   email:
     - exampleone@org.com
+matrix:
+  exclude:
+    - node_js: "0.11"
+  
