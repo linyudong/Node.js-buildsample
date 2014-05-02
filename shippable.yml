@@ -10,5 +10,5 @@ notifications:
   email:
     - exampleone@org.com
 matrix:
-  allow_failures:
+  exclude:
     - node_js: "0.11"
